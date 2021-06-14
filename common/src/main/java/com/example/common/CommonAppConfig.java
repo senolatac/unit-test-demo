@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootConfiguration
 public class CommonAppConfig
 {
-    @Value("${messaging.server.url:'abc'}")
+    @Value("${messaging.server.url}")
     private String MESSAGING_SERVER_URL;
 
     @Bean
