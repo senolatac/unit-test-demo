@@ -1,0 +1,5 @@
+rootProject.name = 'unit-test-demo'
+include 'common'
+include 'web'
+include 'worker'
+
