@@ -1,12 +1,15 @@
 package com.example.worker.queue;
 
 import com.example.common.dto.QueueRequestPostDto;
+import com.example.worker.WorkerAppConfig;
 import com.example.worker.service.IRequestHandlerService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.ConfigDataApplicationContextInitializer;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.mockito.Mockito.doThrow;
@@ -18,6 +21,7 @@ import static org.mockito.Mockito.verify;
  * @time 11:27
  */
 @ExtendWith(SpringExtension.class)
+@ContextConfiguration(classes = WorkerAppConfig.class, initializers = ConfigDataApplicationContextInitializer.class)
 class RequestQueueHandlerTest
 {
     @Autowired
